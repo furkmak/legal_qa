@@ -3,34 +3,49 @@
 ## Overview
 A web interface for a fine-tuned legal question-answering model using Hugging Face Transformers.
 
-### Model
+## Model
 
 The model used in this project is a fine-tuned version of the [deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) model from Hugging Face Transformers. It is specifically designed for question-answering tasks, utilizing a transformer architecture to provide accurate responses based on given contexts. 
 
-#### Key Features:
+### Key Features:
 - **Transformer Architecture**: Leverages the power of transformer models for improved performance.
 - **Fine-Tuning**: Adapted for legal document context, enhancing its ability to understand and respond to legal inquiries.
 
-### Training Data
+## Training Data
 
 The model has been fine-tuned using the [Open Australian Legal Q&A Dataset](https://huggingface.co/datasets/umarbutler/open-australian-legal-qa) available on Hugging Face. This dataset comprises a collection of legal questions and their corresponding answers extracted from Australian legal documents. 
 
-#### Dataset Features:
+### Dataset Features:
 - **Diverse Legal Questions**: Includes a wide range of questions covering various aspects of Australian law.
 - **Contextual Information**: Each question is paired with relevant context from legal documents, allowing the model to learn the relationship between legal texts and user inquiries.
 
 This rich dataset enables the model to provide precise and contextually relevant answers to user queries related to Australian legal matters.
 
-### Web Interface
+### Citation
+If you use this dataset in your work, please cite it as follows:
+
+```bibtex
+@misc{butler-2023-open-australian-legal-dataset,
+    author = {Butler, Umar},
+    year = {2023},
+    title = {Open Australian Legal QA},
+    publisher = {Hugging Face},
+    version = {2.0.0},
+    doi = {10.57967/hf/1479},
+    url = {https://huggingface.co/datasets/umarbutler/open-australian-legal-qa}
+}
+```
+
+## Web Interface
 
 The web interface is built using [FastAPI](https://fastapi.tiangolo.com/) and provides an intuitive user experience for interacting with the question-answering model. 
 
-#### Key Features:
+### Key Features:
 - **User-Friendly Form**: Users can easily input their questions and context through a simple HTML form.
 - **Dynamic Responses**: The application processes inputs in real-time and displays the top answers along with their confidence scores.
 - **Responsive Design**: The interface is designed to be accessible on both desktop and mobile devices.
 
-#### Technologies Used:
+### Technologies Used:
 - **FastAPI**: For building the web application and API.
 - **Jinja2**: For rendering HTML templates dynamically.
 - **Transformers**: For loading the fine-tuned model and processing questions.
