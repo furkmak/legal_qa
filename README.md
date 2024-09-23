@@ -19,18 +19,22 @@ Before you start, ensure you have the following installed on your machine:
    ```bash
    git clone https://github.com/yourusername/yourrepository.git
 3. Navigate into the cloned directory:
-   ```cd yourrepository```
+   ```bash
+   cd yourrepository
 
 ### Step 2: Build the Docker Container
 
 1. In the terminal, ensure you are in the root of the project directory (where the `Dockerfile` is located). 
 2. Build the Docker image using the following command (replace `yourimage` with your desired image name):
-   ```docker build -t yourimage .```
+   ```bash
+   docker build -t yourimage .
 
 ### Step 3: Run the Docker Container
 
 Once the image is built, you can run the Docker container using:
-  ```docker run -p 8000:8000 yourimage```
+  ```bash
+docker run -p 8000:8000 yourimage
+```
 
 This command maps port 8000 of your local machine to port 8000 of the container, allowing you to access the web interface.
 
