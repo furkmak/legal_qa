@@ -45,6 +45,7 @@ The web interface is built using [FastAPI](https://fastapi.tiangolo.com/) and pr
 ### Key Features:
 - **User-Friendly Form**: Users can easily input their questions and context through a simple HTML form.
 - **Dynamic Responses**: The application processes inputs in real-time and displays the top answers along with their confidence scores.
+- **Sliding Window Technique**: To handle large text inputs effectively, the application utilizes a sliding window technique to split the context into manageable chunks, ensuring that the model can process the entire text efficiently. The model then chooses the top 5 answers with the highest confidence scores and reports them.
 - **Responsive Design**: The interface is designed to be accessible on both desktop and mobile devices.
 
 ### Technologies Used:
