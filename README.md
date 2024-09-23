@@ -3,6 +3,25 @@
 ## Overview
 A web interface for a fine-tuned legal question-answering model using Hugging Face Transformers.
 
+# Table of Contents
+
+- [Legal Q&A Model](#legal-qa-model)
+  - [Overview](#overview)
+  - [Model](#model)
+  - [Training Data](#training-data)
+  - [Web Interface](#web-interface)
+  - [Prerequisites](#prerequisites)
+  - [Step-by-Step Instructions to Use the Legal Q&A Model](#step-by-step-instructions-to-use-the-legal-qa-model)
+    - [Step 1: Clone the Repository](#step-1-clone-the-repository)
+    - [Step 2: Build the Docker Container](#step-2-build-the-docker-container)
+    - [Step 3: Run the Docker Container](#step-3-run-the-docker-container)
+    - [Step 4: Access the Application](#step-4-access-the-application)
+    - [Step 5: Using the Application](#step-5-using-the-application)
+    - [Step 6: Stopping the Container](#step-6-stopping-the-container)
+  - [Troubleshooting](#troubleshooting)
+  - [Contributing](#contributing)
+  - [License](#license)
+
 ## Model
 
 The model used in this project is a fine-tuned version of the [deepset/roberta-base-squad2](https://huggingface.co/deepset/roberta-base-squad2) model from Hugging Face Transformers. It is specifically designed for question-answering tasks, utilizing a transformer architecture to provide accurate responses based on given contexts. 
