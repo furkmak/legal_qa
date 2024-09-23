@@ -14,21 +14,14 @@ jobs:
 
     steps:
       - name: Check out the code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Updated to v3 for node16+ support
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v2  # Updated to v2 for node16+ support
 
-      - name: Log in to Docker Hub (or another registry)
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-
-      - name: Build and Push Docker image (latest)
+      - name: Build Docker image
         run: |
           docker build -t furkmak/legalapp:latest .
-          docker push furkmak/legalapp:latest
 
       - name: Run FastAPI application and test Q&A
         run: |
@@ -44,7 +37,7 @@ jobs:
 
     steps:
       - name: Check out the code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Updated to v3
 
       - name: Log in to Docker Hub (or another registry)
         env:
@@ -52,12 +45,11 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-      - name: Pull Docker image (latest)
-        run: docker pull furkmak/legalapp:latest
-
-      - name: Tag and Push Docker image with version
+      - name: Push Docker image
         run: |
           # Automatically version the image by using the commit SHA
           IMAGE_VERSION=$(echo $GITHUB_SHA | cut -c1-7)
+          echo "IMAGE_VERSION=$IMAGE_VERSION" >> $GITHUB_ENV  # Use environment file instead of set-output
           docker tag furkmak/legalapp:latest furkmak/legalapp:$IMAGE_VERSION
+          docker push furkmak/legalapp:latest
           docker push furkmak/legalapp:$IMAGE_VERSION
