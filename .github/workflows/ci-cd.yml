@@ -19,9 +19,16 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-      - name: Build Docker image
+      - name: Log in to Docker Hub (or another registry)
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+      - name: Build and Push Docker image (latest)
         run: |
           docker build -t furkmak/legalapp:latest .
+          docker push furkmak/legalapp:latest
 
       - name: Run FastAPI application and test Q&A
         run: |
@@ -45,10 +52,12 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-      - name: Push Docker image
+      - name: Pull Docker image (latest)
+        run: docker pull furkmak/legalapp:latest
+
+      - name: Tag and Push Docker image with version
         run: |
           # Automatically version the image by using the commit SHA
           IMAGE_VERSION=$(echo $GITHUB_SHA | cut -c1-7)
           docker tag furkmak/legalapp:latest furkmak/legalapp:$IMAGE_VERSION
-          docker push furkmak/legalapp:latest
           docker push furkmak/legalapp:$IMAGE_VERSION
