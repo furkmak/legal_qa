@@ -1,12 +1,10 @@
 # Legal Q&A Model
 
-## Overview
 A web interface for a fine-tuned legal question-answering model using Hugging Face Transformers.
 
-# Table of Contents
+## Table of Contents
 
 - [Legal Q&A Model](#legal-qa-model)
-  - [Overview](#overview)
   - [Model](#model)
   - [Training Data](#training-data)
   - [Web Interface](#web-interface)
