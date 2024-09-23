@@ -66,12 +66,12 @@ Before you start, ensure you have the following installed on your machine:
 ### Step 1: Clone the Repository
 
 1. Open your terminal (Command Prompt, PowerShell, or Terminal).
-2. Clone the repository using the following command (replace `yourusername` and `yourrepository` with your GitHub username and repository name):
+2. Clone the repository using the following command:
    ```bash
-   git clone https://github.com/yourusername/yourrepository.git
+   git clone https://github.com/furkmak/legal_qa.git
 3. Navigate into the cloned directory:
    ```bash
-   cd yourrepository
+   cd legal_qa
 
 ### Step 2: Build the Docker Container
 
