@@ -98,7 +98,7 @@ This command maps port 8000 of your local machine to port 8000 of the container,
 ### Step 5: Using the Application
 
 1. Enter your Question: In the "Question" input field, type your legal question.
-2. Provide Context: In the "Context" textarea, paste the relevant legal document text.
+2. Provide Context: In the "Context" text area, paste the relevant legal document text.
 3. Click the "Get Answer" button.
 4. The application will process your input and display the answer with its confidence score.
 
