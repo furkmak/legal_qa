@@ -13,28 +13,13 @@ The model used in this project is a fine-tuned version of the [deepset/roberta-b
 
 ## Training Data
 
-The model has been fine-tuned using the [Open Australian Legal Q&A Dataset](https://huggingface.co/datasets/umarbutler/open-australian-legal-qa) available on Hugging Face. This dataset comprises a collection of legal questions and their corresponding answers extracted from Australian legal documents. 
+The model has been fine-tuned using the [Open Australian Legal Q&A Dataset](https://huggingface.co/datasets/umarbutler/open-australian-legal-qa) (Butler, 2023) available on Hugging Face. This dataset comprises a collection of legal questions and their corresponding answers extracted from Australian legal documents. 
 
 ### Dataset Features:
 - **Diverse Legal Questions**: Includes a wide range of questions covering various aspects of Australian law.
 - **Contextual Information**: Each question is paired with relevant context from legal documents, allowing the model to learn the relationship between legal texts and user inquiries.
 
 This rich dataset enables the model to provide precise and contextually relevant answers to user queries related to Australian legal matters.
-
-### Citation
-If you use this dataset in your work, please cite it as follows:
-
-```bibtex
-@misc{butler-2023-open-australian-legal-dataset,
-    author = {Butler, Umar},
-    year = {2023},
-    title = {Open Australian Legal QA},
-    publisher = {Hugging Face},
-    version = {2.0.0},
-    doi = {10.57967/hf/1479},
-    url = {https://huggingface.co/datasets/umarbutler/open-australian-legal-qa}
-}
-```
 
 ## Web Interface
 
