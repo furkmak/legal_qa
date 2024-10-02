@@ -74,7 +74,6 @@ Before you start, ensure you have the following installed on your machine:
    cd legal_qa
 
 ### Step 2: Build the Docker Container
-
 1. In the terminal, ensure you are in the root of the project directory (where the `Dockerfile` is located). 
 2. Build the Docker image using the following command (replace `yourimage` with your desired image name):
    ```bash
