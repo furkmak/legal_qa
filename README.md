@@ -65,7 +65,6 @@ Before you start, ensure you have the following installed on your machine:
 ## Step-by-Step Instructions to Use the Legal Q&A Model
 
 ### Step 1: Clone the Repository
-
 1. Open your terminal (Command Prompt, PowerShell, or Terminal).
 2. Clone the repository using the following command:
    ```bash
