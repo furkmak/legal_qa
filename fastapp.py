@@ -1,24 +1,13 @@
-from fastapi import FastAPI, Form, Request
+from fastapi import FastAPI, Form
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
-from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
+from transformers import pipeline
 from typing import List
 from jinja2 import Template
 
 app = FastAPI()
 
-# Load the original model
-#model = AutoModelForQuestionAnswering.from_pretrained("deepset/roberta-base-squad2")
-#tokenizer = AutoTokenizer.from_pretrained("deepset/roberta-base-squad2")
-
-# Load the fine-tuned adapter
-#adapter_name = "fine_tuned_legalqa"  # This should contain the adapter files
-#model.load_adapter(adapter_name)
-
-# Create the pipeline
-#qa_pipeline = pipeline("question-answering", model=model, tokenizer=tokenizer)
-
-# Load the Q&A model
+# Load the Q&A model pipeline
 qa_pipeline = pipeline("question-answering", model="fine_tuned_legalqa")
 
 # Sliding window function to split context into chunks
@@ -170,3 +159,8 @@ async def answer_question(question: str = Form(...), context: str = Form(...)):
     # Render the template with the answer
     template = Template(html_form)
     return template.render(answer=top_answers)
+
+# Run the app with Uvicorn when executed directly
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
