@@ -8,7 +8,7 @@ on:
 env:
   PROJECT_ID: 'legalqaapp' # Update this to your GCP project ID
   REGION: 'us-west1' # Update to your preferred GCP region
-  SERVICE: 'legalqagithub' # Update to your Cloud Run service name
+  SERVICE: 'legalappgh' # Update to your Cloud Run service name
 
 jobs:
   deploy:
@@ -34,8 +34,8 @@ jobs:
         uses: 'docker/login-action@v3'
         with:
           username: 'oauth2accesstoken'
-          password: '${{ steps.auth.outputs.token }}'  # Use the correct token from the auth step
-          registry: '${{ env.REGION }}-docker.pkg.dev' # Google Artifact Registry URL
+          password: '${{ steps.auth.outputs.access_token }}'  # Corrected to use 'access_token'
+          registry: '${{ env.REGION }}-docker.pkg.dev'        # Google Artifact Registry URL
 
       - name: 'Build and Push Container'
         run: |-
