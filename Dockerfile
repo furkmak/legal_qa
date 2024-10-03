@@ -14,10 +14,14 @@ RUN python -c "from transformers import AutoModelForQuestionAnswering, AutoToken
     AutoTokenizer.from_pretrained('deepset/roberta-base-squad2', cache_dir='/app/models'); \
     AutoModelForQuestionAnswering.from_pretrained('deepset/roberta-base-squad2', cache_dir='/app/models')"
 
+# Copy the fine-tuned model into the container
 COPY fine_tuned_legalqa ./fine_tuned_legalqa
 
+# Copy the rest of the application code
 COPY . .
 
+# Expose the port that Uvicorn runs on
 EXPOSE 8000
 
-CMD ["uvicorn", "fastapp:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run the application with Uvicorn
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
