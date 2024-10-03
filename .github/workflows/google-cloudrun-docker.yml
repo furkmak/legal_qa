@@ -36,7 +36,7 @@ on:
 
 env:
   PROJECT_ID: 'legalqaapp' # TODO: update to your Google Cloud project ID
-  REGION: 'us-west1' # TODO: update to your region
+  REGION: 'us-central1' # TODO: update to your region
   SERVICE: 'legalappgh' # TODO: update to your service name
   #WORKLOAD_IDENTITY_PROVIDER: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider' # TODO: update to your workload identity provider
 
