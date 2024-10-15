@@ -163,4 +163,4 @@ async def answer_question(question: str = Form(...), context: str = Form(...)):
 # Run the app with Uvicorn when executed directly
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8080)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
