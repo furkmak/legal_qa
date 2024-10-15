@@ -21,7 +21,7 @@ COPY fine_tuned_legalqa ./fine_tuned_legalqa
 COPY . .
 
 # Expose the port that Uvicorn runs on
-EXPOSE 8000
+EXPOSE 8080
 
 # Run the application with Uvicorn
-CMD ["uvicorn", "fastapp:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "fastapp:app", "--host", "0.0.0.0", "--port", "8080"]
